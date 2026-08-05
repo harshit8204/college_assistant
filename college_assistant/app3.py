@@ -306,17 +306,6 @@ if user_query:
 
     # Update histories
     st.session_state.lc_messages = result["messages"]
-
-
-
-
-from pathlib import Path
-import streamlit as st
-
-BASE_DIR = Path(__file__).parent
-
-st.write("Current directory:", BASE_DIR)
-st.write("Files:", list(BASE_DIR.iterdir()))
     st.session_state.messages.append({
         "role": "assistant",
         "content": ai_response,
