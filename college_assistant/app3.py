@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 import streamlit as st
 from typing import TypedDict, Annotated
@@ -37,8 +38,13 @@ def load_resources():
         vectorstore = FAISS.from_documents(chunks, embeddings)
         return vectorstore.as_retriever(search_kwargs={"k": 4})
 
-    acedemic_retriever = build_retriver("academics_handbook.pdf")
-    fee_retriever = build_retriver("fee_structure.pdf")
+    BASE_DIR = Path(__file__).parent
+
+    academic_pdf = BASE_DIR / "academics_handbook.pdf"
+    fee_pdf = BASE_DIR / "fee_structure.pdf"
+
+    acedemic_retriever = build_retriver(str(academic_pdf))
+    fee_retriever = build_retriver(str(fee_pdf))
 
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.4)
 
