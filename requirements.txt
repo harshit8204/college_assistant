@@ -3,6 +3,7 @@ langgraph
 langchain
 langchain-groq
 langchain-mistralai
+langchain-openai
 langchain-tavily
 langchain-community
 langchain-text-splitters
