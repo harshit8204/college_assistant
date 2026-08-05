@@ -1,10 +1,15 @@
+streamlit==1.49.1
 langgraph
 langchain
 langchain-groq
-python-dotenv
-
+langchain-mistralai
+langchain-tavily
 langchain-community
 langchain-text-splitters
+langchain-huggingface
 sentence-transformers
 faiss-cpu
 pypdf
+python-dotenv
+torch
+torchvision
